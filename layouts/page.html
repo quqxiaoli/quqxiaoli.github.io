@@ -1,0 +1,5 @@
+{{ define "main" }}
+<div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">我的空间</a> <span>›</span> {{ .Title }}</div>
+<article class="content-box page-box"><div class="section-heading"><h2>{{ .Title }}</h2></div>{{ if eq .Section "posts" }}<p class="entry-meta">发表于 {{ .Date.Format "2006 年 01 月 02 日" }}</p>{{ end }}<div class="prose">{{ .Content }}</div></article>
+{{ if eq .Section "posts" }}<p class="back-link"><a href="{{ (site.GetPage "posts").RelPermalink }}">« 返回日志列表</a></p>{{ end }}
+{{ end }}

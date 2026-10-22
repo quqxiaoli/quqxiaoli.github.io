@@ -1,0 +1,16 @@
+<aside class="sidebar" aria-label="空间侧栏">
+  <section class="sidebar-box profile-box">
+    <h2 class="box-title">✧ 个人档案</h2>
+    <div class="profile-inner"><div class="avatar" aria-label="默认头像：一朵小花">✿</div><strong>{{ site.Params.nickname }}</strong><span class="profile-label">空间主人</span><p>{{ site.Params.status }}</p></div>
+  </section>
+  <section class="sidebar-box">
+    <h2 class="box-title">✧ 空间导航</h2>
+    <ul class="side-links">
+      <li><a href="{{ site.Home.RelPermalink }}">⌂ &nbsp;返回首页</a></li>
+      <li><a href="{{ (site.GetPage "posts").RelPermalink }}">✎ &nbsp;全部日志</a></li>
+      <li><a href="{{ (site.GetPage "albums").RelPermalink }}">▧ &nbsp;我的相册</a></li>
+      <li><a href="{{ (site.GetPage "about").RelPermalink }}">♡ &nbsp;关于主人</a></li>
+    </ul>
+  </section>
+  <section class="sidebar-box notice-box"><h2 class="box-title">✧ 空间公告</h2><p>欢迎来这里逛逛。文字和照片会慢慢填满这个角落。</p></section>
+</aside>

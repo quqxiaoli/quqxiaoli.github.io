@@ -1,0 +1,15 @@
+<a class="skip-link" href="#main-content">跳到正文</a>
+<header class="masthead">
+  <div class="masthead-top"><span>✿ 我的个人空间</span><span class="masthead-date">欢迎来坐坐</span></div>
+  <div class="banner">
+    <span class="banner-star star-one" aria-hidden="true">✦</span><span class="banner-star star-two" aria-hidden="true">✧</span>
+    <div class="banner-copy"><span class="banner-eyebrow">MY LITTLE CORNER OF THE WEB</span><h1>{{ site.Title }}</h1><p>{{ site.Params.tagline }}</p></div>
+    <div class="banner-decoration" aria-hidden="true"><span class="deco-cloud">☁</span><span class="deco-sun">☼</span><span class="deco-hill"></span></div>
+  </div>
+  <nav class="top-nav" aria-label="网站导航">
+    <a href="{{ site.Home.RelPermalink }}" {{ if .IsHome }}aria-current="page"{{ end }}>空间首页</a>
+    <a href="{{ (site.GetPage "posts").RelPermalink }}" {{ if eq .Section "posts" }}aria-current="page"{{ end }}>我的日志</a>
+    <a href="{{ (site.GetPage "albums").RelPermalink }}" {{ if eq .Section "albums" }}aria-current="page"{{ end }}>相册</a>
+    <a href="{{ (site.GetPage "about").RelPermalink }}" {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}>关于我</a>
+  </nav>
+</header>

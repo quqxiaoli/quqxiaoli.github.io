@@ -1,0 +1,14 @@
+baseURL = 'https://quqxiaoli.github.io/'
+locale = 'zh-cn'
+title = '小梨的个人空间'
+timeZone = 'Asia/Shanghai'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  nickname = '小梨'
+  tagline = '欢迎来到我的小小空间'
+  status = '这个角落正在慢慢布置中。'
+  copyright = '本站内容由站长创作。'
+
+[markup.goldmark.renderer]
+  unsafe = false

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="breadcrumb">我的空间 <span>›</span> 首页</div>
+<section class="welcome-box"><div class="welcome-pin">空间心情</div><p>{{ .Content }}</p><small>这里是一个慢慢装修中的个人空间，欢迎常来看看。</small></section>
+<section class="content-box">
+  <div class="section-heading"><h2>✎ 最新日志</h2><a href="{{ (site.GetPage "posts").RelPermalink }}">更多日志 »</a></div>
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ if $posts }}
+    <ul class="post-list">{{ range first 6 ($posts.ByDate.Reverse) }}<li><span class="post-date">{{ .Date.Format "2006.01.02" }}</span><a href="{{ .RelPermalink }}">{{ .Title }}</a><span class="post-arrow" aria-hidden="true">›</span></li>{{ end }}</ul>
+  {{ else }}<p class="empty-hint">还没有日志，第一篇故事正等着写下。</p>{{ end }}
+</section>
+<section class="content-box photo-preview">
+  <div class="section-heading"><h2>▧ 相册一角</h2><a href="{{ (site.GetPage "albums").RelPermalink }}">走进相册 »</a></div>
+  <div class="photo-placeholder"><span aria-hidden="true">✿</span><p>照片还在路上，先留一块位置给回忆。</p></div>
+</section>
+{{ end }}

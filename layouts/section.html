@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="breadcrumb"><a href="{{ site.Home.RelPermalink }}">我的空间</a> <span>›</span> {{ .Title }}</div>
+<section class="content-box page-box"><div class="section-heading"><h2>{{ .Title }}</h2></div>
+{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+{{ if .Pages }}<ul class="post-list">{{ range .Pages.ByDate.Reverse }}<li><span class="post-date">{{ .Date.Format "2006.01.02" }}</span><a href="{{ .RelPermalink }}">{{ .Title }}</a><span class="post-arrow" aria-hidden="true">›</span></li>{{ end }}</ul>{{ else }}{{ if eq .Section "posts" }}<p class="empty-hint">日志还没写好，过些日子再来看看吧。</p>{{ end }}{{ end }}
+</section>
+{{ end }}

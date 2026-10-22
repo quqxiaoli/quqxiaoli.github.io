@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c4e3ee">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.tagline }}{{ end }}">
+  {{ with resources.Get "css/space.css" }}{{ $css := . | minify | fingerprint }}<link rel="stylesheet" href="{{ $css.RelPermalink }}">{{ end }}
+</head>
+<body>
+<div class="space-shell">
+  {{ partial "header.html" . }}
+  <div class="space-body">
+    {{ partial "sidebar.html" . }}
+    <main id="main-content" class="main-panel">{{ block "main" . }}{{ end }}</main>
+  </div>
+  <footer class="site-footer"><span>{{ site.Params.copyright }}</span><span>由 Hugo 驱动 · 一点一点布置的小空间</span></footer>
+</div>
+</body>
+</html>

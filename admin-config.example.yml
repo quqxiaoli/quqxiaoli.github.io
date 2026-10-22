@@ -1,0 +1,25 @@
+# 在 Decap Turbo 创建站点后，把 SITE_ID 替换为 Overview 中的 UUID，
+# 再复制本文件为 static/admin/config.yml。不要把占位值直接发布。
+backend:
+  name: turbo-github
+  turbo_site_id: SITE_ID
+  branch: main
+
+locale: zh_Hans
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: posts
+    label: 日志
+    label_singular: 日志
+    folder: content/posts
+    create: true
+    extension: md
+    format: toml-frontmatter
+    slug: '{{slug}}'
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发表时间, name: date, widget: datetime, default: '{{now}}' }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 正文, name: body, widget: markdown }

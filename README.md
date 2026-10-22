@@ -12,13 +12,13 @@ hugo server -D
 
 然后打开 `http://localhost:1313/`。构建正式站点运行 `hugo --minify`，结果在 `public/`。
 
-## 在线编辑器（登录待验证）
+## 在线编辑器（写入待验证）
 
 `static/admin/index.html` 是 Decap CMS 的入口，`static/admin/config.yml` 已配置 Decap Turbo 的站点 ID。后台使用 Decap Turbo 登录和 GitHub App 代理写入仓库；文章仍保存在 `content/posts/` 中，GitHub Actions 自动部署。Site ID 是公开配置标识，不是密码。
 
 访问 `https://quqxiaoli.github.io/admin/`，用创建该 Turbo 站点的账号登录。Turbo 站点必须绑定仓库 `quqxiaoli/quqxiaoli.github.io`、分支 `main`、配置路径 `static/admin/config.yml`，后台网址包含 `https://quqxiaoli.github.io/admin/`，且 GitHub App 已获该仓库授权。**不要把密码或密钥发给他人。**
 
-请先创建一篇无敏感内容的测试日志，确认它提交到了 `content/posts/` 且网页自动更新。未完成这项端到端验证前，公开侧栏的“写日志（站长入口）”仍指向 GitHub 的文件编辑页；后台可以直接访问 `/admin/`。`admin-config.example.yml` 是无站点 ID 的备用配置模板。
+请先在后台创建一篇无敏感内容的测试日志，确认它提交到了 `content/posts/` 且网页自动更新。后台登录与现有日志列表已经验证可用，但新增文章写入和部署尚未验证。公开侧栏的“写日志（站长后台）”链接指向 `/admin/`；后台地址公开，但只有授权账户可写。`admin-config.example.yml` 是无站点 ID 的备用配置模板。
 
 ## 发文章（当前版本）
 
